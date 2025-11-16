@@ -1,0 +1,25 @@
+{
+  "name": "sua-pa-ai-pwa",
+  "version": "1.0.0",
+  "description": "Sua Pa AI - Educational Assistant PWA",
+  "scripts": {
+    "config": "node scripts/generate-config.js",
+    "build:env": "python build-env-simple.py",
+    "build:env:node": "node build-env.js",
+    "prebuild": "npm run build:env",
+    "serve": "npx serve . -p 3000",
+    "dev": "npm run build:env && npm run serve",
+    "setup": "npm run config"
+  },
+  "keywords": [
+    "pwa",
+    "education",
+    "ai",
+    "firebase"
+  ],
+  "author": "Sua Pa AI Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

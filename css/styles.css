@@ -1,0 +1,305 @@
+/* Custom Styles for Sua Pa AI */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Chat Message Animations */
+.message-enter {
+    animation: messageSlide 0.3s ease-out;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Task Item Styles */
+.task-item {
+    transition: all 0.2s ease;
+}
+
+.task-item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark .task-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Notification Styles */
+.notification {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Profile Menu */
+#profile-menu {
+    animation: dropDown 0.2s ease-out;
+}
+
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Companion Tool Cards */
+.companion-tool {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.companion-tool::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.companion-tool:hover::before {
+    left: 100%;
+}
+
+.companion-tool:hover {
+    transform: translateY(-5px);
+}
+
+/* Code Block Styling */
+pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    #sidebar.-translate-x-full {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    #sidebar {
+        width: 80%;
+        max-width: 280px;
+    }
+}
+
+/* Form Focus States */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Dark Mode Transitions */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-glow {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.dark .shadow-glow {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Backdrop Blur */
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Custom Checkbox */
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #9333ea;
+    border-color: #9333ea;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background-color: #667eea;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #667eea;
+    color: white;
+}

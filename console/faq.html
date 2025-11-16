@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Sua Pa AI Console</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png">
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0M9DMF399"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-F0M9DMF399');
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between relative">
+                <!-- Logo -->
+                <a href="../index.html" class="flex items-center gap-2">
+                    <img src="../assets/images/logo.png" alt="Sua Pa AI Logo" class="w-8 h-8 rounded-lg">
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Sua Pa AI
+                    </span>
+                </a>
+
+                <!-- Centered Console Navigation -->
+                <div class="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="pricing.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Pricing</a>
+                    <a href="faq.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">FAQ</a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                    <a href="updates.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Updates</a>
+                    <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Blog</a>
+                    <a href="careers.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Careers</a>
+                </div>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center gap-4">
+                    <a href="../dashboard.html" class="hidden lg:flex px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:opacity-90 transition">
+                        Dashboard
+                    </a>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                Frequently Asked Questions
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                Find answers to common questions about Sua Pa AI
+            </p>
+        </div>
+
+        <!-- FAQ Categories -->
+        <div class="max-w-4xl mx-auto space-y-8">
+            <!-- General Questions -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-question-circle text-blue-600"></i>
+                    General Questions
+                </h2>
+                <div class="space-y-4">
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">What is Sua Pa AI?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Sua Pa AI is an intelligent educational assistant designed specifically for students following the Ghana Education Service (GES) curriculum.
+                            It helps with homework, provides explanations, manages tasks, and offers personalized learning support.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">How does Sua Pa AI work?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Sua Pa AI uses advanced artificial intelligence to understand your questions and provide accurate, curriculum-aligned responses.
+                            It can help with various subjects, explain concepts in simple terms, and adapt to your learning style.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Is Sua Pa AI free to use?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Yes! We offer a free plan with 10 AI conversations per day. For unlimited access and advanced features,
+                            check out our Student plan at GH₵29/month.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Features & Usage -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-rocket text-purple-600"></i>
+                    Features & Usage
+                </h2>
+                <div class="space-y-4">
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">What subjects does Sua Pa AI cover?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Sua Pa AI covers all major subjects in the GES curriculum including Mathematics, English, Science, Social Studies,
+                            ICT, and more. It's designed to help students from primary to senior high school levels.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Can Sua Pa AI help with homework?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Absolutely! Sua Pa AI can explain concepts, guide you through problems step-by-step, and help you understand your homework better.
+                            It focuses on helping you learn rather than just giving answers.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Can I use Sua Pa AI offline?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Student and Institution plan subscribers can download our PWA (Progressive Web App) for limited offline access.
+                            Some features require an internet connection.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">What are the three main features?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Sua Pa AI has three core features: <strong>Bot</strong> (AI chat assistant), <strong>Copilot</strong> (task and homework manager),
+                            and <strong>Companion</strong> (study tools including flashcards, quizzes, and note-taking).
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Account & Billing -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-user-circle text-green-600"></i>
+                    Account & Billing
+                </h2>
+                <div class="space-y-4">
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">How do I create an account?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Click on "Get Started" or "Dashboard" and you'll be able to register with your email or sign in with Google.
+                            It takes less than a minute!
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Can I cancel my subscription anytime?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Yes, you can cancel your subscription at any time from your account settings. You'll continue to have access
+                            until the end of your billing period.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">What payment methods do you accept?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            We accept Mobile Money (MTN, Vodafone, AirtelTigo), credit/debit cards, and bank transfers for institutional plans.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Is there a student discount?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Our Student plan is already priced with students in mind at GH₵29/month. Schools and institutions can contact us
+                            for special bulk pricing.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Technical Support -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-headset text-red-600"></i>
+                    Technical Support
+                </h2>
+                <div class="space-y-4">
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">I forgot my password. What should I do?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Click on "Forgot Password?" on the login page. Enter your email and we'll send you instructions to reset your password.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">What browsers are supported?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Sua Pa AI works best on modern browsers including Chrome, Firefox, Safari, and Edge. We recommend keeping your browser updated.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">How do I report a bug or issue?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            You can report issues by emailing us at support@suapa.ai or through the feedback form in your dashboard.
+                            We typically respond within 24 hours.
+                        </p>
+                    </details>
+
+                    <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Is my data safe?</summary>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">
+                            Yes! We take data security seriously. All data is encrypted and stored securely on Firebase.
+                            We never share your personal information with third parties. Read our <a href="privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a> for more details.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <!-- Still Have Questions? -->
+        <div class="mt-16 text-center max-w-2xl mx-auto bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h2 class="text-3xl font-bold mb-4">Still have questions?</h2>
+            <p class="text-blue-100 mb-6">
+                Can't find the answer you're looking for? Our support team is here to help!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:info@suapaai.com" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Email Support
+                </a>
+                <a href="blog.html" class="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-book"></i>
+                    Visit Blog
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <img src="../assets/images/logo.png" alt="Sua Pa AI Logo" class="w-8 h-8 rounded-lg">
+                    <span class="text-xl font-bold text-white">Sua Pa AI</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="terms.html" class="hover:text-white transition">Terms</a>
+                    <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+                    <a href="about.html" class="hover:text-white transition">About</a>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-sm text-gray-400">
+                © 2024 Sua Pa AI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        themeToggle?.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

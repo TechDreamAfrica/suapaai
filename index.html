@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Pa AI - Your Educational Companion</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <script>
+        // Initialize theme before page loads to prevent flash
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <meta name="description" content="Sua Pa AI is an intelligent educational assistant built for Ghana. It understands the Ghanaian curriculum and helps students learn faster, teachers teach smarter, and schools go digital. From lesson notes to homework help, Sua Pa AI makes learning simple, smart, and local.">
+    <meta name="keywords" content="Sua Pa AI, African AI assistant, smart AI chatbot, AI for business, AI learning assistant, African artificial intelligence, AI productivity tools, AI content creator, AI automation, Sua Pa smart assistant, Ghana AI, Tech Dream Africa AI, Ghana AI education, Ghanaian curriculum assistant, AI learning platform Ghana, AI for schools in Ghana, Ghana education technology, AI tutor Ghana, digital learning Ghana, smart classroom Ghana, Ghana education system, Sua Pa smart learning, Ghana EdTech, Ghana AI chatbot for students, AI for teachers Ghana">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0M9DMF399"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-F0M9DMF399');
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <img src="assets/images/logo.png" alt="Sua Pa AI Logo" class="w-10 h-10 rounded-lg">
+                    <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Sua Pa AI
+                    </span>
+                </div>
+
+                <!-- Desktop Menu - Centered -->
+                <div class="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="#features" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Features</a>
+
+                    <!-- Console Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2">
+                            Console
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 pt-2 w-48">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2">
+                                <a href="console/pricing.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <i class="fas fa-tag mr-2"></i>Pricing
+                                </a>
+                                <a href="console/faq.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <i class="fas fa-question-circle mr-2"></i>FAQ
+                                </a>
+                                <a href="console/about.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <i class="fas fa-info-circle mr-2"></i>About
+                                </a>
+                                <a href="console/updates.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <i class="fas fa-bell mr-2"></i>Updates
+                                </a>
+                                <a href="console/blog.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <i class="fas fa-blog mr-2"></i>Blog
+                                </a>
+                                <a href="console/careers.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <i class="fas fa-briefcase mr-2"></i>Careers
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Downloads Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2">
+                            Downloads
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 pt-2 w-56">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2">
+                                <a href="downloads/index.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition font-semibold border-b border-gray-200 dark:border-gray-700">
+                                    <i class="fas fa-download mr-2"></i>All Downloads
+                                </a>
+                                <a href="downloads/pwa.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <i class="fas fa-globe mr-2"></i>Web App (PWA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle-landing" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+                    </button>
+                    <a href="dashboard.html" class="hidden lg:flex px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:opacity-90 transition shadow-lg hover:shadow-xl">
+                        Get Started <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="fas fa-bars text-2xl text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 space-y-3">
+                <a href="#features" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Features</a>
+
+                <!-- Console Links Mobile -->
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-2">
+                    <p class="px-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Console</p>
+                    <a href="console/pricing.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Pricing</a>
+                    <a href="console/faq.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">FAQ</a>
+                    <a href="console/about.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                    <a href="console/blog.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Blog</a>
+                </div>
+
+                <!-- Downloads Links Mobile -->
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-2">
+                    <p class="px-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Downloads</p>
+                    <a href="downloads/index.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">All Downloads</a>
+                    <a href="downloads/pwa.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Web App</a>
+                    <a href="downloads/android.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Android</a>
+                    <a href="downloads/ios.html" class="block pl-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">iOS</a>
+                </div>
+
+                <a href="dashboard.html" class="block px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-center mt-4">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="container mx-auto text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                    Your AI-Powered
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Educational Companion
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+                    Unlock your learning potential with Sua Pa AI. Get instant help with assignments,
+                    manage tasks, and master the GES curriculum with AI assistance.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="dashboard.html" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg rounded-xl font-semibold hover:opacity-90 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                        Start Learning Free <i class="fas fa-rocket ml-2"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@SuaPaAI" target="_blank" class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-lg rounded-xl font-semibold border-2 border-gray-300 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-500 transition">
+                        Watch Demo <i class="fas fa-play ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image/Animation -->
+            <div class="mt-16 relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-3xl"></div>
+                <img src="./assets/images/dashboard.png"
+                     alt="Sua Pa AI Dashboard"
+                     class="relative rounded-2xl shadow-2xl mx-auto border border-gray-200 dark:border-gray-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Carousel -->
+    <section id="features" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Powerful Features for Students
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Everything you need to excel in your studies
+                </p>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="relative max-w-6xl mx-auto">
+                <div id="features-carousel" class="overflow-hidden">
+                    <div class="carousel-track flex transition-transform duration-500">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide min-w-full px-4">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <div class="inline-block p-3 bg-blue-100 dark:bg-blue-900 rounded-xl mb-4">
+                                        <i class="fas fa-robot text-4xl text-blue-600 dark:text-blue-400"></i>
+                                    </div>
+                                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">AI Chat Bot</h3>
+                                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                                        Get instant answers to your questions with our intelligent AI bot.
+                                        Trained on the Ghana Education Service curriculum to provide accurate,
+                                        contextual responses for all your subjects.
+                                    </p>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            24/7 availability
+                                        </li>
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            GES curriculum aligned
+                                        </li>
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            Natural conversation
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                                    <img src="./assets/images/bot.png"
+                                         alt="AI Chat Bot"
+                                         class="rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide min-w-full px-4">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <div class="inline-block p-3 bg-purple-100 dark:bg-purple-900 rounded-xl mb-4">
+                                        <i class="fas fa-tasks text-4xl text-purple-600 dark:text-purple-400"></i>
+                                    </div>
+                                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Task Copilot</h3>
+                                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                                        Never miss a deadline again! Organize assignments, set reminders,
+                                        and track your academic progress with our intelligent task manager.
+                                    </p>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            Smart deadline tracking
+                                        </li>
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            Priority management
+                                        </li>
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            Progress visualization
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                                    <img src="./assets/images/copilot.png"
+                                         alt="Task Copilot"
+                                         class="rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide min-w-full px-4">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <div class="inline-block p-3 bg-pink-100 dark:bg-pink-900 rounded-xl mb-4">
+                                        <i class="fas fa-graduation-cap text-4xl text-pink-600 dark:text-pink-400"></i>
+                                    </div>
+                                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Learning Companion</h3>
+                                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                                        Your personal study assistant with tools for assignments, content writing,
+                                        concept explanations, and adaptive learning paths.
+                                    </p>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            Assignment assistance
+                                        </li>
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            Content generation
+                                        </li>
+                                        <li class="flex items-center text-gray-700 dark:text-gray-300">
+                                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                            Subject references
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                                    <img src="./assets/images/companion.png"
+                                         alt="Learning Companion"
+                                         class="rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button id="prev-slide" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg hover:shadow-xl transition">
+                    <i class="fas fa-chevron-left text-gray-700 dark:text-gray-300"></i>
+                </button>
+                <button id="next-slide" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg hover:shadow-xl transition">
+                    <i class="fas fa-chevron-right text-gray-700 dark:text-gray-300"></i>
+                </button>
+
+                <!-- Carousel Indicators -->
+                <div class="flex justify-center gap-2 mt-8">
+                    <button class="carousel-indicator w-3 h-3 rounded-full bg-blue-600" data-slide="0"></button>
+                    <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600" data-slide="1"></button>
+                    <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    How Sua Pa AI Works
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Get started in three simple steps
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-lg">
+                        1
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Sign Up Free</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Create your account in seconds with email or Google. No credit card required.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-lg">
+                        2
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Choose Your Tool</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Select from Bot, Copilot, or Companion based on your current learning needs.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-lg">
+                        3
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Start Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Ask questions, manage tasks, and get personalized learning assistance instantly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    What Students Say
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Join thousands of students excelling with Sua Pa AI
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">
+                        "Sua Pa AI helped me improve my Mathematics grades from C to A! The explanations are clear and easy to understand."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                            AK
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 dark:text-white">Akua Mensah</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">SHS 2 Student, Accra</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">
+                        "The task manager is a game changer! I never miss assignments anymore and my productivity has skyrocketed."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold">
+                            KO
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 dark:text-white">Kwame Osei</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">JHS 3 Student, Kumasi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">
+                        "The assignment helper saved me so much time! I get well-structured outlines that make writing essays so much easier."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-600 to-red-600 rounded-full flex items-center justify-center text-white font-bold">
+                            EA
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 dark:text-white">Esi Agyeman</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">SHS 1 Student, Takoradi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Learning?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join thousands of Ghanaian students who are already excelling with Sua Pa AI
+            </p>
+            <a href="dashboard.html" class="inline-block px-10 py-4 bg-white text-blue-600 text-lg rounded-xl font-bold hover:bg-gray-100 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                Get Started for Free <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="assets/images/logo.png" alt="Sua Pa AI Logo" class="w-8 h-8 rounded-lg">
+                        <span class="text-xl font-bold text-white">Sua Pa AI</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Your AI-powered educational companion for the GES curriculum.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="console/pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="console/updates.html" class="hover:text-white transition">Updates</a></li>
+                        <li><a href="downloads/index.html" class="hover:text-white transition">Downloads</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="console/about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="console/blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="console/careers.html" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="console/faq.html" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="console/privacy.html" class="hover:text-white transition">Privacy</a></li>
+                        <li><a href="console/terms.html" class="hover:text-white transition">Terms</a></li>
+                        <li><a href="mailto:contact@suapa.ai" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 Sua Pa AI. All rights reserved.
+                </p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PWA Install Modal -->
+    <div id="pwa-install-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-md w-full p-8 shadow-2xl transform transition-all">
+            <div class="text-center mb-6">
+                <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-4">
+                    <i class="fas fa-download text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Install Sua Pa AI</h3>
+                <p class="text-gray-600 dark:text-gray-400">Get quick access and work offline!</p>
+            </div>
+
+            <div class="space-y-3 mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <span class="text-gray-700 dark:text-gray-300">Fast access from home screen</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <span class="text-gray-700 dark:text-gray-300">Works offline</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <span class="text-gray-700 dark:text-gray-300">No app store needed</span>
+                </div>
+            </div>
+
+            <div class="flex gap-3">
+                <button id="pwa-install-btn" class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:opacity-90 transition">
+                    Install Now
+                </button>
+                <button id="pwa-dismiss-btn" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                    Maybe Later
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/landing.js"></script>
+    <script src="js/pwa-install.js"></script>
+</body>
+</html>

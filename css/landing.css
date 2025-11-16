@@ -1,0 +1,252 @@
+/* Landing Page Specific Styles */
+
+/* Smooth Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+}
+
+/* Carousel Styles */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+}
+
+.carousel-indicator {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-indicator:hover {
+    transform: scale(1.2);
+}
+
+/* Card Hover Effects */
+.card-3d-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-3d-hover:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Pricing Card Scale */
+.pricing-card {
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Ripple Effect */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Feature Icon Animation */
+.feature-icon {
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Parallax Effect */
+.parallax-slow {
+    transform: translateY(calc(var(--scroll) * 0.5px));
+}
+
+/* Stats Counter Animation */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-number {
+    animation: countUp 0.8s ease-out;
+}
+
+/* Loading Skeleton */
+.skeleton {
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Navigation Active State */
+nav a.active {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Footer Links Hover */
+footer a {
+    position: relative;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Slide */
+#mobile-menu {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Spacing */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Backdrop Filter Support */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    nav {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* Dark Mode Transitions */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Prevent transition on page load */
+.no-transition * {
+    transition: none !important;
+}
+
+/* Focus Visible for Accessibility */
+*:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    nav, footer, #cta-section {
+        display: none;
+    }
+}

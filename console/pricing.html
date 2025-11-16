@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Sua Pa AI Console</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png">
+    <script>
+        // Initialize theme before page loads
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0M9DMF399"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-F0M9DMF399');
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between relative">
+                <!-- Logo -->
+                <a href="../index.html" class="flex items-center gap-2">
+                    <img src="../assets/images/logo.png" alt="Sua Pa AI Logo" class="w-8 h-8 rounded-lg">
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Sua Pa AI
+                    </span>
+                </a>
+
+                <!-- Centered Console Navigation -->
+                <div class="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="pricing.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Pricing</a>
+                    <a href="faq.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">FAQ</a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                    <a href="updates.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Updates</a>
+                    <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Blog</a>
+                    <a href="careers.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Careers</a>
+                </div>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center gap-4">
+                    <a href="../dashboard.html" class="hidden lg:flex px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:opacity-90 transition">
+                        Dashboard
+                    </a>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                Choose Your Plan
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                Simple, transparent pricing for students and institutions
+            </p>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Free Plan -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Free</h3>
+                    <div class="mb-4">
+                        <span class="text-4xl font-bold text-gray-800 dark:text-white">GH₵0</span>
+                        <span class="text-gray-600 dark:text-gray-400">/month</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Perfect for trying out Sua Pa AI</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">10 AI conversations/day</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Basic task management</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Access to GES curriculum</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Study tools</span>
+                    </li>
+                </ul>
+                <a href="../dashboard.html" class="block w-full py-3 text-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Student Plan -->
+            <div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 transform scale-105 relative">
+                <div class="absolute top-0 right-0 bg-yellow-400 text-gray-900 px-4 py-1 rounded-bl-lg rounded-tr-2xl font-semibold text-sm">
+                    Popular
+                </div>
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Student</h3>
+                    <div class="mb-4">
+                        <span class="text-4xl font-bold text-white">GH₵29</span>
+                        <span class="text-blue-100">/month</span>
+                    </div>
+                    <p class="text-blue-100">Best for individual students</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-yellow-400"></i>
+                        <span class="text-white">Unlimited AI conversations</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-yellow-400"></i>
+                        <span class="text-white">Advanced task management</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-yellow-400"></i>
+                        <span class="text-white">Priority support</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-yellow-400"></i>
+                        <span class="text-white">Personalized learning paths</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-yellow-400"></i>
+                        <span class="text-white">Offline access</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-yellow-400"></i>
+                        <span class="text-white">Advanced analytics</span>
+                    </li>
+                </ul>
+                <a href="../dashboard.html" class="block w-full py-3 text-center bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Start Free Trial
+                </a>
+            </div>
+
+            <!-- Institution Plan -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Institution</h3>
+                    <div class="mb-4">
+                        <span class="text-4xl font-bold text-gray-800 dark:text-white">Custom</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">For schools and organizations</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Everything in Student</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Multi-user accounts</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Admin dashboard</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Progress tracking</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">API access</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-600"></i>
+                        <span class="text-gray-700 dark:text-gray-300">Dedicated support</span>
+                    </li>
+                </ul>
+                <a href="mailto:contact@suapa.ai" class="block w-full py-3 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:opacity-90 transition">
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-16 max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                    <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Can I switch plans anytime?</summary>
+                    <p class="mt-4 text-gray-600 dark:text-gray-400">Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.</p>
+                </details>
+                <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                    <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">Is there a free trial?</summary>
+                    <p class="mt-4 text-gray-600 dark:text-gray-400">Yes, we offer a 7-day free trial for the Student plan. No credit card required.</p>
+                </details>
+                <details class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                    <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer">What payment methods do you accept?</summary>
+                    <p class="mt-4 text-gray-600 dark:text-gray-400">We accept Mobile Money (MTN, Vodafone, AirtelTigo), credit/debit cards, and bank transfers.</p>
+                </details>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <img src="../assets/images/logo.png" alt="Sua Pa AI Logo" class="w-8 h-8 rounded-lg">
+                    <span class="text-xl font-bold text-white">Sua Pa AI</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="terms.html" class="hover:text-white transition">Terms</a>
+                    <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+                    <a href="about.html" class="hover:text-white transition">About</a>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-sm text-gray-400">
+                © 2024 Sua Pa AI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        themeToggle?.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

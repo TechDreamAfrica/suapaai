@@ -1,0 +1,119 @@
+{
+  "name": "Sua Pa AI - Educational Assistant",
+  "short_name": "Sua Pa AI",
+  "description": "Your personal educational companion for learning and productivity",
+  "start_url": "/pwa/index.html",
+  "scope": "/pwa/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "lang": "en",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/screenshot2.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Chat Bot",
+      "short_name": "Bot",
+      "description": "Start a new chat with AI Bot",
+      "url": "/pwa/index.html?view=bot",
+      "icons": [
+        {
+          "src": "icons/bot-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "short_name": "Copilot",
+      "description": "Manage your tasks",
+      "url": "/pwa/index.html?view=copilot",
+      "icons": [
+        {
+          "src": "icons/copilot-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Learning Tools",
+      "short_name": "Companion",
+      "description": "Access learning companion tools",
+      "url": "/pwa/index.html?view=companion",
+      "icons": [
+        {
+          "src": "icons/companion-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
