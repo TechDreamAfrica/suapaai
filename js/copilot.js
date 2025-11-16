@@ -15,16 +15,29 @@ import {
 
 import { refreshSidebar, updateUserActivity } from './sidebar.js';
 import { dashboardData } from './dashboard-data.js';
-import config from './config.js';
+import { getConfig } from './config-loader.js';
 import { escapeHtml, showNotification } from './utils.js';
+import { firebaseReady } from './firebase.js';
 
 // DOM Elements
 const taskForm = document.getElementById('task-form');
 const tasksList = document.getElementById('tasks-list');
 
-// AI API Configuration - Loaded from environment variables
-const OPENAI_API_KEY = config.ai.openaiApiKey;
+// AI API Configuration - Loaded from Google Drive with fallback to local
+let OPENAI_API_KEY = '';
 const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+
+// Load config asynchronously
+(async () => {
+    try {
+        await firebaseReady;
+        const config = await getConfig();
+        OPENAI_API_KEY = config.ai.openaiApiKey;
+        console.log('✅ Copilot config loaded');
+    } catch (error) {
+        console.error('❌ Failed to load copilot config:', error);
+    }
+})();
 
 // Task data
 let tasks = [];

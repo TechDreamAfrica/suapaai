@@ -10,7 +10,24 @@ import {
     serverTimestamp
 } from './firebase.js';
 
-import config from './config.js';
+import { getConfig } from './config-loader.js';
+import { firebaseReady } from './firebase.js';
+
+// AI API Configuration - Loaded from Google Drive with fallback to local
+let OPENAI_API_KEY = '';
+const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+
+// Load config asynchronously
+(async () => {
+    try {
+        await firebaseReady;
+        const config = await getConfig();
+        OPENAI_API_KEY = config.ai.openaiApiKey;
+        console.log('✅ Companion config loaded');
+    } catch (error) {
+        console.error('❌ Failed to load companion config:', error);
+    }
+})();
 
 // Save companion interaction to Firebase
 async function saveCompanionInteraction(toolType, prompt, response, metadata = {}) {
@@ -43,10 +60,6 @@ const companionToolArea = document.getElementById('companion-tool-area');
 const companionToolTitle = document.getElementById('companion-tool-title');
 const companionToolContent = document.getElementById('companion-tool-content');
 const closeCompanionTool = document.getElementById('close-companion-tool');
-
-// AI API Configuration - Loaded from environment variables
-const OPENAI_API_KEY = config.ai.openaiApiKey;
-const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
 
 // AI Helper Function
 async function getAIResponse(prompt, systemContext = '') {

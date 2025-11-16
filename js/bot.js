@@ -12,16 +12,29 @@ import {
 
 import { refreshSidebar, updateUserActivity } from './sidebar.js';
 import { dashboardData } from './dashboard-data.js';
-import config from './config.js';
+import { getConfig } from './config-loader.js';
+import { firebaseReady } from './firebase.js';
 
 // DOM Elements
 const chatMessages = document.getElementById('chat-messages');
 const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
 
-// AI API Configuration - Loaded from environment variables
-const OPENAI_API_KEY = config.ai.openaiApiKey;
+// AI API Configuration - Loaded from Google Drive with fallback to local
+let OPENAI_API_KEY = '';
 const OPENAI_API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+
+// Load config asynchronously
+(async () => {
+    try {
+        await firebaseReady;
+        const config = await getConfig();
+        OPENAI_API_KEY = config.ai.openaiApiKey;
+        console.log('✅ Bot config loaded, API key:', OPENAI_API_KEY ? 'Set' : 'Not set');
+    } catch (error) {
+        console.error('❌ Failed to load bot config:', error);
+    }
+})();
 
 // Ghana Education Service curriculum context
 const GES_CONTEXT = `You are Sua Pa AI, an educational assistant for students in Ghana following the Ghana Education Service (GES) curriculum.

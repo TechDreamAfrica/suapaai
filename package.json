@@ -2,6 +2,7 @@
   "name": "sua-pa-ai-pwa",
   "version": "1.0.0",
   "description": "Sua Pa AI - Educational Assistant PWA",
+  "type": "module",
   "scripts": {
     "config": "node scripts/generate-config.js",
     "build:env": "python build-env-simple.py",
